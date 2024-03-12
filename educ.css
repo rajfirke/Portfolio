@@ -1,0 +1,36 @@
+
+.edu1 {
+    /* Add any specific styling for the section here */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: revert;
+}
+
+.edu1 img {
+    /* Add styling for the image within the edu1 section */
+    width: 70%; /* Example: Make the image fill the width of its container */
+    height: auto; /* Example: Maintain aspect ratio */
+    /* Add any other styling you want for the image */
+    border-radius: 10px; /* Example: Apply a 10px border radius for rounded corners */
+    border: 2px solid #000;
+}
+
+@media screen and (max-width: 480px) {
+    .edu1 img {
+      width: 100%;
+      height: auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    .edu1 img {
+      width: 100%;
+      height: auto;
+    }
+}
+@media screen and (max-width: 900px) {
+    .edu1 img {
+      width: 90%;
+      height: auto;
+    }
+}

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ART</title>
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="navigation.css" />
+  <link rel="stylesheet" href="navigation_stop.css" />
+  <link rel="stylesheet" href="expi.css">
+  <link rel="stylesheet" href="educ.css">
+  <link rel="stylesheet" href="skills.css">
+  <link rel="stylesheet" href="email.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <div class="nav-left-side">
+        <svg width="17" height="26" viewBox="0 0 17 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.309 2.90741C10.309 2.90741 4.29997 8.73841 2.526 13.9214C2.40313 14.2804 2.73267 14.6124 3.10045 14.5192L13.2394 11.9481C13.9358 11.7715 14.5723 12.3638 14.368 13.0525C12.9552 17.8149 8.62911 23.5897 8.62911 23.5897"
+            stroke="#A259FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <a href="/"></a>
+      </div>
+
+      <button id="open-nav-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H15C15.4142 5.25 15.75 5.58579 15.75 6C15.75 6.41421 15.4142 6.75 15 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z"
+            fill="white" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M3 18C3 17.5858 3.33579 17.25 3.75 17.25H15C15.4142 17.25 15.75 17.5858 15.75 18C15.75 18.4142 15.4142 18.75 15 18.75H3.75C3.33579 18.75 3 18.4142 3 18Z"
+            fill="white" />
+        </svg>
+      </button>
+
+      <div class="wrapper">
+        <ul>
+          <li>
+            <button id="close-nav-menu">
+              <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.7505 11.7495L35.2505 35.2495" stroke="#A259FF" stroke-width="6" />
+                <path d="M35.2502 11.7502L11.7502 35.2502" stroke="#A259FF" stroke-width="6" />
+              </svg>
+            </button>
+          </li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li class="socials">
+            <p>Join our community</p>
+
+            <div>
+              <a href="#">
+                <img src="./assets/socials/DiscordLogo.png" alt="Discord logo" />
+              </a>
+              <a href="#">
+                <img src="./assets/socials/YoutubeLogo.png" alt="Youtube logo" />
+              </a>
+              <a href="#">
+                <img src="./assets/socials/TwitterLogo.png" alt="Twitter logo" />
+              </a>
+              <a href="#">
+                <img src="./assets/socials/InstagramLogo.png" alt="Instagram logo" />
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <br>
+    <br>
+    <!-- <div class="icon">
+      <img src="./assets/gallery/removed_bg.png" class="myicon"></img>
+    </div> -->
+    <section id="home" class="container greeting-section">
+      <div class="left-side">
+        <h1 id="greeting">
+          Hello, it's me
+          <br>
+          <div class="bob">
+            RAJ FIRKE...
+          </div>
+        </h1>
+        <br>
+        <p id="weather">2024 Passout, Computer Science Student with expertise domain knowledge of SDE, Data Analyst and
+          Data Scientist </p>
+      </div>
+
+      <div class="right-side">
+        <img src="./assets/gallery/removed_bg_icon.png" class="myicon"></img>
+      </div>
+    </section>
+    <br>
+    <br>
+    <br>
+  <br>
+    <section class="container navtype">
+      <page-module partial="Navigation">
+        <link href="navigation.css"
+          rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <page-module-container>
+          <div class="navigation_container"><navigation-sticky-wrapper data-stop-section-id="#navigation-stop_1"
+              data-navigation="#navigation" class="navigation_sticky-wrapper" style="height: 17695px;">
+              <nav id="navigation" class="navigation scroll-down"><navigation-manager class="navigation_manager">
+                  <ul id="navigation_link_wrapper" class="navigation_link-wrapper">
+                    <li aria-hidden="true" class="navigation_mobile-spacer-wrapper"><navigation-spacer data-sibling="0"
+                        class="navigation_mobile-spacer" style="width: 0px;"></navigation-spacer></li>
+                    <li id="navigation_item-0" data-navigation-id="introduction"
+                      class="navigation_link navigation_selected">
+                      <a href="#home"><span>Introduction</span></a>
+                    </li>
+                    <li id="navigation_item-4" data-navigation-id="gemini-apps" class="navigation_link"><a
+                      href="#skills"><span>Skills</span></a></li>
+                    <li id="navigation_item-1" data-navigation-id="gemini-1.5" class="navigation_link"><a
+                        href="#expid"><span>Experience</span></a></li>
+                    <li id="navigation_item-2" data-navigation-id="gemini-1.0" class="navigation_link"><a
+                        href="#products"><span>Projects</span></a></li>
+                    <li id="navigation_item-3" data-navigation-id="safety" class="navigation_link"><a
+                        href="#edu"><span>Education</span></a></li>
+                    
+                    <li id="navigation_item-5" data-navigation-id="build-with-gemini" class="navigation_link"><a
+                        href="#faqs"><span>Certificates</span></a></li>
+                    <li aria-hidden="true" class="navigation_mobile-spacer-wrapper"><navigation-spacer data-sibling="5"
+                        class="navigation_mobile-spacer" style="width: 0px;">&nbsp;</navigation-spacer></li>
+                  </ul>
+                  <div id="indicator_wrapper" class="indicator_wrapper">
+                    <div id="mobile_indicator" class="mobile_indicator"
+                      style="translate: none; rotate: none; scale: none; transform: translate(26.8px, 0px) scale(0.1385, 1);">
+                    </div>
+                  </div>
+                </navigation-manager></nav>
+            </navigation-sticky-wrapper></div>
+        </page-module-container>
+      </page-module>
+    </section>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section id="skills" class="container">
+      <div class="custom-header">
+        <h1>Skills </h1>
+      </div>
+      <div class="skills-container">
+        <div class="skill-box">
+          <h3>Coding Languages and OS</h3>
+          <ul>
+            <li>★ Python</li>
+            <li>★ C/C++</li>
+            <li>★ SQL</li>
+            <li>★ HTML5</li>
+            <li>★ CSS3</li>
+            <li>★ JavaScript</li>
+            <li>★ MySQL</li>
+            <li>★ Linux</li>
+            <li>★ Windows</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h3>Tools, Frameworks and Libraries</h3>
+          <ul>
+            <li>★ Git</li>
+            <li>★ Microsoft PowerBI</li>
+            <li>★ Visual Studio</li>
+            <li>★ Amazon Web Services (AWS)</li>
+            <li>★ TensorFlow</li>
+            <li>★ Pandas</li>
+            <li>★ NumPy</li>
+            <li>★ Sci-kit-learn</li>
+            <li>★ NLTK</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h3>Coursework</h3>
+          <br>
+          <ul>
+            <li>★ Data Structures and Algorithms</li>
+            <li>★ Object Oriented Programming</li>
+            <li>★ Database Management System (DBMS)</li>
+            <li>★ Cloud Computing</li>
+            <li>★ Operating System</li>
+            <li>★ Software Engineering</li>
+            <li>★ Software Testing</li>
+            <li>★ Linear algebra</li>
+          </ul>
+        </div>
+        <div class="skill-box">
+          <h3>Product Skills and Others</h3>
+          <ul>
+            <li>★ Front-end Development</li>
+            <li>★ Machine Learning (ML)</li>
+            <li>★ Natural Language Processing</li>
+            <li>★ Agile methodologies</li>
+            <li>★ Data Analytics</li>
+            <li>★ Business Intelligence</li>
+            <li>★ Data Visualization</li>
+            <li>★ Statistics Analysis</li>
+            <li>★ Web Scraping</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="gallery" class="gallery-section" hidden>
+      <img src="" alt="" />
+
+      <div class="thumbnails">
+
+      </div>
+    </section>
+
+    <section class="experience-section container" id="expid">
+      <div class="custom-header">
+        <h1>Experience</h1>
+      </div>
+      <div class="experience-container">
+        <div class="experience-item">
+          <h3>PCCOE, Pune, India</h3>
+          <p class="position">Teaching Assistant</p>
+          <p class="date">August 2023 - November 2023</p>
+          <ul class="experience-highlights">
+            <li>Led a batch of 60+ first-year students in mastering C/C++ programming principles, yielding a 50%
+              improvement in overall class performance and a 25% increase in effective project submissions.</li>
+            <li>Improved comprehension of fundamental data structures and algorithms, leading to a demonstration 30%
+              enhancement in skills.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h3>Persistent Systems, Pune, India</h3>
+          <p class="position">Software Trainee</p>
+          <p class="date">June 2023 - August 2023</p>
+          <ul class="experience-highlights">
+            <li>Completed extensive training in critical software skills, encompassing Database Management Systems
+              (DBMS), Data Structures and Algorithms, Object-Oriented Programming (OOP), Linux Operating System, and
+              Python.</li>
+            <li>Gained hands-on experience by applying acquired skills in software development.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h3>PHN Technology, Pune, India</h3>
+          <p class="position">Machine Learning and Data Science Intern</p>
+          <p class="date">April 2023 - June 2023</p>
+          <ul class="experience-highlights">
+            <li>Enhanced predictive accuracy by 9% through the development and training of machine learning models,
+              focusing on challenges encompassing data cleaning, exploratory data analysis, and model optimization.</li>
+            <li>Conducted comprehensive exploratory data analysis, transforming raw data into actionable insights, and
+              applied machine learning and data science techniques to address real-world challenges, resulting in an
+              improved in data-driven decision-making processes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="container products-section">
+      <div class="custom-header">
+        <h1>Projects</h1>
+      </div>
+      <div class="products-filter">
+        <input type="radio" checked="true" id="all" name="products" />
+        <label for="all" class="labelProjects">
+          All
+          <span class="product-amount">3</span>
+        </label>
+        <input type="radio" id="paid" name="products" />
+        <label for="paid" class="labelProjects">
+          Software Development
+          <span class="product-amount">2</span>
+        </label>
+        <input type="radio" id="free" name="products" />
+        <label for="free" class="labelProjects">
+          Machine Learning
+          <span class="product-amount">1</span>
+        </label>
+
+        <span class="glider"></span>
+      </div>
+
+      <div class="products-area">
+
+
+      </div>
+
+    </section>
+      
+      
+    <div class="custom-header container"id="edu">
+      <h1>Education</h1>
+    </div>
+    <section class="edu1 container" id="edu">
+      <img src="./assets/common/edu2.png" alt="Description of the image">
+    </section>
+    <br>
+    <br>
+    <br>
+
+    <section id="faqs" class="container faqs-section">
+      <div class="custom-header">
+        <h1>Certificates</h1>
+      </div>
+
+      <details>
+        <summary>※ Google Data Analytics</summary>
+        <ul style="list-style-type:circle" class="uloutside">
+          <li>I hold the Google Data Analytics Certificate, having completed eight hands-on courses by Google. Proficient in tools like spreadsheets, SQL, PowerBI, and Python, this made me well-prepared for entry-level roles in Data Analytics.</li>
+          <li>The skills I gained from this course include:
+            <ul  class="ulinside">
+              <li>★ Data Aggregation</li>
+              <li>★ Data Cleaning</li>
+              <li>★ Data Ethics</li>
+              <li>★ Data Visualization</li>
+              <li>★ Spreadsheets</li>
+              <li>★ SQL</li>
+              <li>★ Structured Thinking</li>
+            </ul>
+          </li>
+          <li>Certificate link: <a href="https://www.credly.com/badges/f0a8e38a-2058-4324-bd68-45f2d5c4f28d/print" target="_blank">Click to view</a></li>
+        </ul>
+      </details>
+      
+
+      <details>
+        <summary>※ AWS Academy Cloud Foundations</summary>
+        <ul style="list-style-type:circle" class="uloutside">
+          <li>This online course introduced me to cloud computing and Amazon Web Services (AWS). It covered the basics of AWS services, concepts, and security features.</li>
+          <li>The skills I gained from this course include:
+            <ul  class="ulinside">
+              <li>★ Concepts of cloud computing like service models, Deployment Models, Serverless Computing</li>
+              <li>★ Understanding AWS services such as storage, compute, databases, and networking</li>
+            </ul>
+          </li>
+        
+        <li>Certificate link: <a href="https://www.credly.com/badges/2b3dde91-424b-4869-93e3-060979d52d9d/print" target="_blank">Click to view</a>
+      </ul>
+      </details>
+      
+
+      <details>
+        <summary>※ AWS Academy Machine Learning Foundations</summary>
+        <ul style="list-style-type:circle" class="uloutside">
+          <li> This online course introduced me to Machine Learning and Amazon Web Services (AWS). Building upon my cloud computing knowledge, this certificate delves into the fundamentals of machine learning on AWS.</li>
+          <li>The skills I gained from this course include:
+            <ul class="ulinside">
+              <li>★ Artificial Intelligence: Machine Learning</li>
+              <li>★ AWS</li>
+              <li>★ AWS Cloud Computing</li>
+              <li>★ Machine Learning</li>
+              <li>★ Machine Learning (ML) Foundations</li>
+            </ul>
+          </li>
+       
+        <li>Certificate link: <a href="https://www.credly.com/badges/f943e41d-3a96-491e-b0ba-83bfcbbeb170/print" target="_blank">Click to view</a></li>
+      </ul>
+      </details>
+
+      <details>
+        <summary>※ Advanced C and C++</summary>
+        <ul style="list-style: circle;" class="uloutside">
+          <li>In-depth understanding of pointers, memory management, data structures (like linked lists and trees), and object-oriented programming principles.</li>
+          <li>Mastery of advanced C++ features like operator overloading, inheritance, polymorphism, and templates.</li>
+        </ul>
+      </details>
+      
+      
+    </section>
+  
+    <section class="connect-wrapper container">
+      <h2 class="connect-title">Connect with Me</h2>
+      <form class="connect-form" id="connectForm">
+        <div class="formcontact">
+          <label for="connectEmail">Your Email :</label>
+          <input type="email" id="connectEmail" name="connectEmail" placeholder="Your Email" required>
+        </div>   
+        <div class="formcontact">
+          <label for="connectSubject">Subject :</label>
+          <input type="text" id="connectSubject" name="connectSubject" placeholder="Subject" required>
+        </div>  
+        <div class="formcontact">
+          <label for="connectDescription">Description:</label>
+          <textarea id="connectDescription" name="connectDescription" placeholder="Description" rows="4" required></textarea>
+        </div>
+          <button type="submit">Send</button>
+      </form>
+  </section>
+
+  <section class="footer-container">
+
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+        <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+  
+      </ul>
+      <p>&copy;2024 Raj Firke | Made with ❤️ from India</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  </section>
+  
+
+  <script src="main.js"> </script>
+</main>
+</body>
+
+</html>
