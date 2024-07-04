@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ART</title>
+  <title>RAJ</title>
   <link rel="stylesheet" href="./main.css" />
   <link rel="stylesheet" href="navigation.css" />
   <link rel="stylesheet" href="navigation_stop.css" />
@@ -25,7 +25,7 @@
   <header>
     <nav class="container">
       <div class="nav-left-side">
-        <svg width="17" height="26" viewBox="0 0 17 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <img width="75" height="110" viewBox="0 0 17 26" fill="none" src="/assets/common/logoR1.png">
           <path
             d="M10.309 2.90741C10.309 2.90741 4.29997 8.73841 2.526 13.9214C2.40313 14.2804 2.73267 14.6124 3.10045 14.5192L13.2394 11.9481C13.9358 11.7715 14.5723 12.3638 14.368 13.0525C12.9552 17.8149 8.62911 23.5897 8.62911 23.5897"
             stroke="#A259FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
@@ -58,7 +58,7 @@
             </button>
           </li>
           <li><a href="#home">Home</a></li>
-          <li><a href="#gallery">Highlights</a></li>
+          <li><a href="https://drive.google.com/file/d/1lzxr4EytRUkKfb9juvmyGQ5-TJLl4w6o/view?usp=sharing" id="resumeLink">Resume</a></li>
           <li><a href="#products">Personal</a></li>
           <!-- <li><a href="#faqs">Importants</a></li> -->
           <li class="socials">
@@ -89,6 +89,7 @@
     <br>
     <!-- <div class="icon">
       <img src="./assets/gallery/removed_bg.png" class="myicon"></img>
+      🚀 Meet [Your Name], a 2024 Computer Engineering graduate currently interning at Red Hat as a Software Engineer. With a diverse skill set spanning Software Development, Data Science, and Machine Learning, I've donned many hats in the tech world. Whether it's coding the future, crunching data, or teaching machines to learn, I'm always up for a challenge!
     </div> -->
     <section id="home" class="container greeting-section">
       <div class="left-side">
@@ -100,17 +101,23 @@
           </div>
         </h1>
         <br>
-        <p id="weather">2024 Passout, Computer Science Student with expertise domain knowledge of SDE, Data Analyst and
-          Data Scientist </p>
+        <p id="weather">A 2024 Computer Engineering graduate currently a Intern at <span style="color: red;"><b>Red Hat </b></span> as a Software Engineer. With a diverse skill set spanning Software Development, Data Science, and Machine Learning, I've donned many hats in the tech world. Whether it's coding the future, crunching data, or teaching machines to learn, I'm always up for a challenge! </p>
+        <br> 
+        <div class="left-side-resume"> 
+        <div class="resume_btn">
+          <a href="https://drive.google.com/file/d/1lzxr4EytRUkKfb9juvmyGQ5-TJLl4w6o/view?usp=sharing" target="_blank">
+              <p class="resumep">Resume</p>
+          </a>
       </div>
-
+      </div>
+      </div>
       <div class="right-side">
         <img src="./assets/gallery/removed_bg_icon.png" class="myicon"></img>
       </div>
     </section>
     <br>
-    <br>
-    <br>
+  
+
   <br>
     <section class="container navtype">
       <page-module partial="Navigation">
@@ -235,6 +242,18 @@
         <h1>Experience</h1>
       </div>
       <div class="experience-container">
+        <div class="experience-item">
+          <h3>BrainChain, Pune, India</h3>
+          <p class="position">Software Developer</p>
+          <p class="date">December 2023 - April 2023</p>
+          <ul class="experience-highlights">
+            <li>Utilized multithreading concepts to optimize code, resulting in a significant reduction of execution time by 73%, 
+              thereby improving overall system efficiency and performance.</li>
+            <li>•	Led a team of 4 in optimizing the semantic mapping of data to specific categories, 
+              leading to a notable 23% enhancement in accuracy and efficiency, thereby facilitating precise data analysis and 
+              decision-making processes.	</li>
+          </ul>
+        </div>
         <div class="experience-item">
           <h3>PCCOE, Pune, India</h3>
           <p class="position">Teaching Assistant</p>
@@ -443,6 +462,7 @@
   
 
   <script src="main.js"> </script>
+  <!-- <script src="resume.js"></script> -->
 </main>
 </body>
 

@@ -222,6 +222,16 @@ main .greeting-section {
     flex-direction: column;
   }
 }
+main .greeting-section .left-side{
+  width: 50%;
+}
+
+@media (max-width: 600px) {
+  main .greeting-section .left-side {
+      width: 100%;
+  }
+}
+
 main .greeting-section .left-side h1 {
   font-style: normal;
   font-weight: 600;
@@ -235,7 +245,52 @@ main .greeting-section .left-side p {
   font-size: 14px;
   line-height: 20px;
   margin-top: 4px;
+  text-align: justify;
 }
+
+/* Container styles */
+.left-side-resume {
+  display: flex;
+  justify-content: left; /* Centers the button horizontally */
+  margin-top: 20px; /* Adjust as needed */
+  width: 10px;
+}
+
+/* Button styles */
+.resume_btn a {
+  display: flex;
+  text-decoration: none;
+  /* background-color: #007BFF; Primary button color */
+  border: 2px solid transparent;
+  border-color: rgb(255, 232, 226);
+  color: white;
+
+  justify-content: center;
+  min-width: 140px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  /* transition: background-color 0.3s, transform 0.3s; */
+  
+  box-shadow: 0 0 20px transparent;
+  transition: border-color 0.3s, box-shadow 0.3s, color 0.3s, font-size 0.3s;
+}
+
+.resume_btn a:hover {
+  border-color: rgb(240, 88, 50);
+  box-shadow: 0 0 10px rgb(5, 234, 16);
+  color: #00162d;
+  font-size: 40px;
+  background-color: #cbccc8; /* Darker shade on hover */
+
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Text styles */
+.resumep {
+  margin: 0;
+}
+
 
 .myicon{
   width: 100%;

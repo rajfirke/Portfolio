@@ -295,7 +295,7 @@ function populateProducts(productList){
 
             let productLinkButton = document.createElement("a");
             productLinkButton.classList.add("product-link-button");
-            productLinkButton.textContent = "Github";
+            productLinkButton.textContent = "Github Link";
             productLinkButton.href = product.link;
             productLinkButton.target = "_blank";
       
