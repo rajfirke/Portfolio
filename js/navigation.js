@@ -94,6 +94,19 @@ function setActiveSection(sectionId) {
   }
 }
 
+// Distance from the top of the viewport to the section title on a direct
+// /research-style link. The section's own padding sits above the title, so
+// aligning the section box left a large empty band under the nav.
+const ROUTE_TITLE_TOP = 132;
+
+function sectionTitle(section) {
+  return (
+    section.querySelector(
+      ".about-label, .exp-label, .skills-label, .projects-label, .research-label, .os-label, .edu-label, .custom-header"
+    ) || section
+  );
+}
+
 function scrollToSection(sectionId, immediate) {
   const yBefore = window.scrollY;
   if (!sectionId || sectionId === "home") {
@@ -105,11 +118,13 @@ function scrollToSection(sectionId, immediate) {
   const el = document.getElementById(sectionId);
   if (!el) return yBefore;
 
+  const title = sectionTitle(el);
+  const top = Math.max(0, title.getBoundingClientRect().top + window.scrollY - ROUTE_TITLE_TOP);
+
   if (window.__lenis) {
-    window.__lenis.scrollTo(el, { offset: -16, immediate: Boolean(immediate) });
+    window.__lenis.scrollTo(top, { immediate: Boolean(immediate) });
   } else {
-    const top = el.getBoundingClientRect().top + window.scrollY - 16;
-    window.scrollTo({ top: Math.max(0, top), behavior: immediate ? "auto" : "smooth" });
+    window.scrollTo({ top, behavior: immediate ? "auto" : "smooth" });
   }
   return yBefore;
 }
