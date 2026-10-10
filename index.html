@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
   <title>Raj Firke</title>
   <meta name="description" content="Software Engineer (AI) at Red Hat. Research on LLM evaluation and CoT process monitoring. Two first-author papers at EMNLP 2026 Main. Provena, PyTorch, vLLM.">
   <meta name="author" content="Raj Firke">
@@ -14,6 +15,7 @@
   <meta property="og:title" content="Raj Firke">
   <meta property="og:description" content="Software Engineer (AI) at Red Hat. Research on LLM evaluation and CoT process monitoring. Two first-author papers at EMNLP 2026 Main.">
   <meta property="og:url" content="https://rajfirke.github.io/Portfolio">
+  <link rel="canonical" href="https://rajfirke.github.io/Portfolio/">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -65,7 +67,7 @@
               </svg>
             </button>
           </li>
-          <li><a href="#home" id="nav-home-link">Home</a></li>
+          <li><a href="./" id="nav-home-link" data-route="" data-section="home">Home</a></li>
           <li><a href="https://drive.google.com/file/d/1FTQ2ix2jh3fqu-6pfMkm6jC1ZptMxjTE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
           <li><a href="#">Gallery (WIP)</a></li>
           <li class="socials">
@@ -109,15 +111,15 @@
         <nav id="navigation" class="navigation scroll-down">
           <div class="navigation_manager">
             <ul id="navigation_link_wrapper" class="navigation_link-wrapper">
-              <li class="navigation_link navigation_selected"><a href="#home"><span>Introduction</span></a></li>
-              <li class="navigation_link"><a href="#about"><span>About</span></a></li>
-              <li class="navigation_link"><a href="#expid"><span>Experience</span></a></li>
-              <li class="navigation_link"><a href="#skills"><span>Skills</span></a></li>
-              <li class="navigation_link"><a href="#products"><span>Projects</span></a></li>
-              <li class="navigation_link"><a href="#research"><span>Research</span></a></li>
-              <li class="navigation_link"><a href="#opensource"><span>Open Source</span></a></li>
-              <li class="navigation_link"><a href="#edu"><span>Education</span></a></li>
-              <li class="navigation_link"><a href="#faqs"><span>Certificates</span></a></li>
+              <li class="navigation_link navigation_selected"><a href="./" data-route="" data-section="home"><span>Introduction</span></a></li>
+              <li class="navigation_link"><a href="aboutme" data-route="aboutme" data-section="about"><span>About</span></a></li>
+              <li class="navigation_link"><a href="experience" data-route="experience" data-section="expid"><span>Experience</span></a></li>
+              <li class="navigation_link"><a href="skills" data-route="skills" data-section="skills"><span>Skills</span></a></li>
+              <li class="navigation_link"><a href="projects" data-route="projects" data-section="products"><span>Projects</span></a></li>
+              <li class="navigation_link"><a href="research" data-route="research" data-section="research"><span>Research</span></a></li>
+              <li class="navigation_link"><a href="opensource" data-route="opensource" data-section="opensource"><span>Open Source</span></a></li>
+              <li class="navigation_link"><a href="education" data-route="education" data-section="edu"><span>Education</span></a></li>
+              <li class="navigation_link"><a href="certificates" data-route="certificates" data-section="faqs"><span>Certificates</span></a></li>
             </ul>
           </div>
         </nav>
@@ -668,18 +670,18 @@
         </div>
         <div class="footer-links">
           <h4>Navigate</h4>
-          <a href="#home">Introduction</a>
-          <a href="#about">About</a>
-          <a href="#expid">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#products">Projects</a>
-          <a href="#research">Research</a>
+          <a href="./" data-route="" data-section="home">Introduction</a>
+          <a href="aboutme" data-route="aboutme" data-section="about">About</a>
+          <a href="experience" data-route="experience" data-section="expid">Experience</a>
+          <a href="skills" data-route="skills" data-section="skills">Skills</a>
+          <a href="projects" data-route="projects" data-section="products">Projects</a>
+          <a href="research" data-route="research" data-section="research">Research</a>
         </div>
         <div class="footer-links">
           <h4>More</h4>
-          <a href="#opensource">Open Source</a>
-          <a href="#edu">Education</a>
-          <a href="#faqs">Certificates</a>
+          <a href="opensource" data-route="opensource" data-section="opensource">Open Source</a>
+          <a href="education" data-route="education" data-section="edu">Education</a>
+          <a href="certificates" data-route="certificates" data-section="faqs">Certificates</a>
           <a href="https://github.com/rajfirke" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://linkedin.com/in/raj-firke" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
@@ -692,8 +694,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> Raj Firke · Pune, India</p>
-        <a href="#home" class="back-to-top">Back to top ↑</a>
+        <p>&copy; <span id="copyright-year"></span> Raj Firke · Pune, India</p>
+        <a href="./" data-route="" data-section="home" class="back-to-top">Back to top ↑</a>
       </div>
     </div>
   </footer>
@@ -823,6 +825,7 @@
         smoothWheel: true,
         smoothTouch: false,
       });
+      window.__lenis = lenis;
 
       document.documentElement.classList.add("lenis-active");
 

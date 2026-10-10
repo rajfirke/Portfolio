@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raj Firke</title>
+  <style>html, body { margin: 0; background: #000; }</style>
+  <script>
+    (function () {
+      var known = {
+        aboutme: 1, about: 1, experience: 1, skills: 1, projects: 1,
+        research: 1, opensource: 1, education: 1, certificates: 1
+      };
+      var parts = location.pathname.split("/").filter(Boolean);
+      if (parts.length && /index\.html?$/i.test(parts[parts.length - 1])) parts.pop();
+      var last = (parts[parts.length - 1] || "").toLowerCase();
+      if (last && known[last]) parts.pop();
+      var safe = parts.every(function (part) { return /^[A-Za-z0-9._~-]+$/.test(part); });
+      var root = "/";
+      if (safe) {
+        root = "/" + parts.join("/");
+        if (root.charAt(root.length - 1) !== "/") root += "/";
+      }
+
+      function showError() {
+        var p = document.createElement("p");
+        p.style.cssText = "color:#fff;font-family:sans-serif;padding:2rem";
+        p.textContent = "This page could not be loaded.";
+        var a = document.createElement("a");
+        a.href = root;
+        a.textContent = " Go home";
+        a.style.color = "#c4b5fd";
+        p.appendChild(a);
+        document.body.appendChild(p);
+      }
+
+      fetch(root + "index.html", { credentials: "same-origin" })
+        .then(function (res) {
+          if (!res.ok) throw new Error("missing index");
+          return res.text();
+        })
+        .then(function (html) {
+          if (!/<base[\s/>]/i.test(html)) {
+            html = html.replace(/<head([^>]*)>/i, '<head$1><base href="' + root + '">');
+          }
+          document.open();
+          document.write(html);
+          document.close();
+        })
+        .catch(showError);
+    })();
+  </script>
+</head>
+<body></body>
+</html>
