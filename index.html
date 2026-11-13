@@ -24,11 +24,31 @@
 
   <meta name="theme-color" content="#000000">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raj Firke",
+    "jobTitle": "Software Engineer (AI)",
+    "worksFor": { "@type": "Organization", "name": "Red Hat" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "PCCOE, Pune" },
+    "url": "https://rajfirke.github.io/Portfolio/",
+    "sameAs": [
+      "https://github.com/rajfirke",
+      "https://linkedin.com/in/raj-firke",
+      "https://medium.com/@rajfirke23"
+    ],
+    "knowsAbout": [
+      "Agentic AI", "Model Context Protocol", "LLM Evaluation",
+      "Machine Learning", "PyTorch", "vLLM", "Open Source"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js" type="module"></script>
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/animations.css">
   <link rel="stylesheet" href="./css/layout.css">
@@ -69,7 +89,6 @@
           </li>
           <li><a href="./" id="nav-home-link" data-route="" data-section="home">Home</a></li>
           <li><a href="https://drive.google.com/file/d/1FTQ2ix2jh3fqu-6pfMkm6jC1ZptMxjTE/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
-          <li><a href="#">Gallery (WIP)</a></li>
           <li class="socials">
             <p>Connect with me</p>
             <div>
@@ -101,7 +120,7 @@
         <p class="hero-tagline">Software Engineer (AI) at <span class="highlight-red">Red Hat</span></p>
         <p class="hero-desc">Building AI infrastructure, AI Researcher, Contributor in PyTorch and vLLM, Maintainer of Provena, Mentor</p>
         <div class="hero-cta">
-          <button class="btn-primary" onclick="document.getElementById('terminal-modal').classList.add('open')">&gt; whoami</button>
+          <button class="btn-primary" id="whoami-btn" type="button">&gt; whoami</button>
           <a href="https://drive.google.com/file/d/1FTQ2ix2jh3fqu-6pfMkm6jC1ZptMxjTE/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-outline">Resume</a>
         </div>
       </div>
@@ -641,15 +660,15 @@
     </section>
 
     <!-- Terminal Modal -->
-    <div id="terminal-modal" class="terminal-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+    <div id="terminal-modal" class="terminal-overlay" role="dialog" aria-modal="true" aria-labelledby="terminal-title" aria-hidden="true" inert>
       <div class="terminal-window">
         <div class="terminal-bar">
           <div class="terminal-dots">
-            <span class="dot red" onclick="document.getElementById('terminal-modal').classList.remove('open')" title="Close"></span>
+            <button type="button" class="dot red" id="terminal-close" aria-label="Close terminal" title="Close"></button>
             <span class="dot yellow dot-disabled"></span>
             <span class="dot green dot-disabled"></span>
           </div>
-          <span class="terminal-title">raj@firke ~ %</span>
+          <span class="terminal-title" id="terminal-title">raj@firke ~ %</span>
         </div>
         <div class="terminal-body" id="terminal-body">
           <div class="terminal-prompt">$ whoami</div>
@@ -786,12 +805,6 @@
       const modal = document.getElementById("terminal-modal");
       if (modal) observer.observe(modal, { attributes: true, attributeFilter: ["class"] });
 
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          const m = document.getElementById("terminal-modal");
-          if (m) m.classList.remove("open");
-        }
-      });
     })();
   </script>
 
@@ -812,7 +825,7 @@
   </script>
 
   <!-- Lenis smooth scroll (desktop only, touch devices use native scroll) -->
-  <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
   <script>
     (() => {
       if (typeof Lenis === "undefined") return;
@@ -849,9 +862,7 @@
     })();
   </script>
 
-  <script src="./js/data.js"></script>
   <script src="./js/navigation.js"></script>
-  <script src="./js/projects.js"></script>
   <script src="./js/main.js"></script>
 
   <!-- G: Combo — Constellation + Aurora -->
@@ -863,8 +874,10 @@
       const dpr = window.devicePixelRatio || 1;
       let w, h;
       const mouse = { x: -9999, y: -9999 };
-      const STAR_COUNT = 250;
-      const CONNECT_DIST = 120;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const narrow = window.matchMedia("(max-width: 768px)").matches;
+      const STAR_COUNT = narrow ? 90 : 250;
+      const CONNECT_DIST = narrow ? 96 : 120;
       const SHOOTING_INTERVAL = 300;
       const colors = ["#a855f7", "#3b82f6", "#22d3ee", "#818cf8", "#c084fc", "#ffffff", "#e0e7ff"];
 
@@ -942,7 +955,14 @@
       }
 
       let t = 0;
+      let rafId = null;
+      let running = !reduceMotion;
+
       function draw() {
+        if (!running) {
+          rafId = null;
+          return;
+        }
         t++;
         ctx.clearRect(0, 0, w, h);
 
@@ -1007,7 +1027,7 @@
         }
 
         ctx.globalAlpha = 1;
-        requestAnimationFrame(draw);
+        rafId = requestAnimationFrame(draw);
       }
 
       const section = canvas.closest(".greeting-section");
@@ -1040,8 +1060,52 @@
         if (auroraBg) auroraBg.style.transform = "";
       });
       window.addEventListener("resize", init);
+
+      let inView = true;
+
+      function start() {
+        if (reduceMotion || rafId !== null || !inView || document.hidden) return;
+        running = true;
+        rafId = requestAnimationFrame(draw);
+      }
+
+      function stop() {
+        running = false;
+        if (rafId !== null) cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+
       init();
-      draw();
+
+      if (reduceMotion) {
+        // Honour reduced-motion: paint one static frame and leave it there.
+        running = true;
+        draw();
+        running = false;
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      } else {
+        start();
+      }
+
+      // Pause while the hero is off-screen or the tab is hidden to save CPU/battery.
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              inView = entry.isIntersecting;
+              if (inView) start();
+              else stop();
+            });
+          },
+          { threshold: 0 }
+        ).observe(section);
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+      });
     })();
   </script>
 </body>

@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Local-only personal documents (keep the file on disk, not in the repo)
+*.docx
+
+# Editor/OS noise
+*~
+.idea/
+.vscode/
